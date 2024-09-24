@@ -13,7 +13,8 @@ import SocialTwo from "@/components/job-single-pages/social/SocialTwo";
 import JobDetailsDescriptions from "@/components/job-single-pages/shared-components/JobDetailsDescriptions";
 import ApplyJobModalContent from "@/components/job-single-pages/shared-components/ApplyJobModalContent";
 import {useParams } from "react-router-dom";
-
+import { useState } from "react";
+import { useRef } from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
@@ -25,6 +26,51 @@ const JobSingleDynamicV1 = () => {
   let params = useParams();
   const id = params.id;
   const company = jobs.find((item) => item.id == id) || jobs[0];
+
+  
+  const [audioSrc] = useState("https://www.example.com/your-audio-file.mp3"); // Pre-uploaded audio file URL
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [speed, setSpeed] = useState(1);
+
+  const audioRef = useRef(null);
+
+  // Format time in minutes:seconds
+  const formatTime = (time) => {
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
+    return `${minutes}:${seconds < 10 ? `0${seconds}` : seconds}`;
+  };
+
+  // Play or pause the audio
+  const togglePlayPause = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  // Update time as the audio plays
+  const updateCurrentTime = () => {
+    setCurrentTime(audioRef.current.currentTime);
+  };
+
+  // Update duration once audio metadata is loaded
+  const onLoadedMetadata = () => {
+    setDuration(audioRef.current.duration);
+  };
+
+  // Change playback speed
+  const handleSpeedChange = (event) => {
+    const newSpeed = parseFloat(event.target.value);
+    setSpeed(newSpeed);
+    audioRef.current.playbackRate = newSpeed;
+  };
 
   return (
     <>
@@ -104,7 +150,10 @@ const JobSingleDynamicV1 = () => {
                   <button className="bookmark-btn">
                     <i className="flaticon-bookmark"></i>
                   </button>
+
+                 
                 </div>
+                
                 {/* End apply for job btn */}
 
                 {/* <!-- Modal --> */}
@@ -138,8 +187,72 @@ const JobSingleDynamicV1 = () => {
             </div>
             {/* <!-- Job Block --> */}
           </div>
+          <div className="mx-40 mt-10">
+         <h3 className="font-semibold text-xl my-1"> About the role</h3>
+      {/* Audio Player with custom controls */}
+      {audioSrc && (
+        <div className="bg-pink-100 p-4 rounded-lg shadow-md">
+          <audio
+            ref={audioRef}
+            src={audioSrc}
+            onTimeUpdate={updateCurrentTime}
+            onLoadedMetadata={onLoadedMetadata}
+            className="hidden"
+          ></audio>
+
+          {/* Play/Pause button */}
+          <button onClick={togglePlayPause} className="mr-4">
+            {isPlaying ? (
+              <span>⏸</span>
+            ) : (
+              <span>▶️</span>
+            )}
+          </button>
+
+          {/* Progress bar */}
+          <input
+            type="range"
+            min="0"
+            max={duration}
+            value={currentTime}
+            onChange={(e) => (audioRef.current.currentTime = e.target.value)}
+            className="w-3/4 mx-2 "
+          />
+
+          {/* Current time and duration */}
+          <span className="font-semibold">{formatTime(currentTime)}</span>
+          <span className="mx-2">/</span>
+          <span  className="font-semibold">{formatTime(duration)}</span>
+
+          {/* Playback speed control */}
+          <select
+            value={speed}
+            onChange={handleSpeedChange}
+            className="ml-4 border p-1 rounded-md"
+          >
+            <option value="0.5">0.5x</option>
+            <option value="1">1x</option>
+            <option value="1.5">1.5x</option>
+            <option value="2">2x</option>
+          </select>
+
+          {/* Description below the player */}
+          <div className="mt-4 bg-gray-100 p-4 pe-0 rounded-lg">
+            <p>
+              The contract principal UX designer will help shape the user experience
+              for Linktree's newest social commerce product. You'll lead the design
+              process from research to high-fidelity prototypes and work closely with
+              product engineering teams to create a seamless, engaging user experience.
+            </p>
+            <button className="float-end bg-gray-100 px-3  border-t border-l border-pink-500 rounded-tl-md ">Summary</button>
+          </div>
+         
+        </div>
+      )}
+    </div>
         </div>
         {/* <!-- Upper Box --> */}
+        
 
         <div className="job-detail-outer">
           <div className="auto-container">

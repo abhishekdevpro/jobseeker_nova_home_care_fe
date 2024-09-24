@@ -85,6 +85,8 @@ import ManageJobsEmploeeDBPage from "./pages/employers-dashboard/manage-jobs";
 import AllApplicantsEmploeesPage from "./pages/employers-dashboard/all-applicants";
 import ShortListedResumeEmploeeDBPage from "./pages/employers-dashboard/shortlisted-resumes";
 import PackageEmploeeDBPage from "./pages/employers-dashboard/packages";
+import BuycoinDBPage from "./pages/employers-dashboard/buycoin";
+
 import MessageEmploeeDBPage from "./pages/employers-dashboard/messages";
 import ResumeAlertsEmploeeDBPage from "./pages/employers-dashboard/resume-alerts";
 import ChangePasswordEmploeeDBPage from "./pages/employers-dashboard/change-password";
@@ -286,6 +288,8 @@ function App() {
                     element={<ShortListedResumeEmploeeDBPage />}
                   />
                   <Route path="packages" element={<PackageEmploeeDBPage />} />
+                  <Route path="buycoin" element={<BuycoinDBPage />} />
+                  
                   <Route path="messages" element={<MessageEmploeeDBPage />} />
                   <Route
                     path="resume-alerts"

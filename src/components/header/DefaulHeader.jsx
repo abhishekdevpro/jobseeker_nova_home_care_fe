@@ -20,7 +20,7 @@ const DefaulHeader = () => {
 
   return (
     // <!-- Main Header-->
-    <header
+    <header style={{backgroundColor:"#4C3957"}}
       className={`main-header  ${
         navbar ? "fixed-header animated slideInDown" : ""
       }`}
@@ -32,7 +32,7 @@ const DefaulHeader = () => {
           <div className="logo-box">
             <div className="me-10">
               <Link to="/">
-                <img alt="brand" src={logo} className="h-28 w-28" />
+                <img alt="brand" src={logo} className="" />
               </Link>
             </div>
           </div>

@@ -93,9 +93,9 @@ const employerMenu = [
   
   {
     id: 14,
-    name: "Services",
-   icon: "la-trash",
-   routePath: "/",
+    name: "Buy Coin",
+   icon: "la-bitcoin",
+   routePath: "/employers-dashboard/buycoin",
   active: "",
   },
   {
