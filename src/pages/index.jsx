@@ -4,8 +4,8 @@ import HomeComponent from "@/components/home-1";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Abroadium",
-  description: "Abroadium",
+  title: "Novahome Care",
+  description: "Novahome Care",
 };
 
 export default function Home() {

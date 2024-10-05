@@ -115,7 +115,7 @@ import SignUpDialog from "./components/auth/SignUp";
 import Showcase from "./pages/showcase/Index";
 import EmployerList from "./pages/employers-list/employers-list";
 import Community from "./components/dashboard-pages/employers-dashboard/community/Community";
-
+import Novahome from './pages/Novahome.jsx'
 function App() {
   useEffect(() => {
     Aos.init({
@@ -131,7 +131,8 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/">
-                <Route index element={<Home />} />
+                {/* <Route index element={<Home />} /> */}
+                <Route index element={<Novahome />} />
                 {/* <Route path="home-1" element={<HomePage1 />} />
                   <Route path="home-2" element={<HomePage2 />} />
                   <Route path="home-3" element={<HomePage3 />} />

@@ -526,7 +526,7 @@ const ShowcaseComponent = () => {
             </svg>
           </a>
         </div>
-        <h3 className="text-white font-semibold text-sm pt-5 ">Follow us All rights reserved © abroadium.com</h3>
+        <h3 className="text-white font-semibold text-sm pt-5 ">Follow us All rights reserved © Novahome Care.com</h3>
       </div>
     </>
   );

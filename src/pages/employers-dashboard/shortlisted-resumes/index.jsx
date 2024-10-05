@@ -4,8 +4,8 @@ import ShortlistedResumes from "@/components/dashboard-pages/employers-dashboard
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Shortlisted Resumes || Abroadium - Job Borad ReactJs Template",
-  description: "Abroadium - Job Borad ReactJs Template",
+  title: "Shortlisted Resumes || Novahome Care - Job Borad ReactJs Template",
+  description: "Novahome Care - Job Borad ReactJs Template",
 };
 
 const ShortListedResumeEmploeeDBPage = () => {

@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Page Not Found || Abroadium - Job Borad ReactJs Template",
-  description: "Abroadium - Job Borad ReactJs Template",
+  title: "Page Not Found || Novahome Care - Job Borad ReactJs Template",
+  description: "Novahome Care - Job Borad ReactJs Template",
 };
 
 const NotFoundPage = () => {

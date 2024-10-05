@@ -5,9 +5,9 @@ import Terms from "@/components/pages-menu/terms";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: 'Terms || Abroadium - Job Borad ReactJs Template',
+  title: 'Terms || Novahome Care - Job Borad ReactJs Template',
   description:
-    'Abroadium - Job Borad ReactJs Template',
+    'Novahome Care - Job Borad ReactJs Template',
   
 }
 

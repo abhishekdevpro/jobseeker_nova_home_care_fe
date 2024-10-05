@@ -56,11 +56,11 @@ const index = () => {
                     rel="noopener noreferrer"
                     className="link"
                   >
-                    www.Abroadium.com
+                    www.Novahome Care.com
                   </a>
                 </li>
                 <li>
-                  <a href="invoice@Abroadium.com">invoice@Abroadium.com</a>
+                  <a href="invoice@Novahome Care.com">invoice@Novahome Care.com</a>
                 </li>
                 <li>
                   <a href="tel:123123456">(123) 123-456</a>

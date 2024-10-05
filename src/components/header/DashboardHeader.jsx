@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import HeaderNavContent from "./HeaderNavContent";
-import logo from "../../Images/logo.png";
+import logo from "../../pages/NovaHome/assests/logo.png";
 import { useLocation } from "react-router-dom";
+import { FaBars, FaTimes } from "react-icons/fa";
 
 const DashboardHeader = () => {
   const { pathname } = useLocation();
@@ -28,7 +29,7 @@ const DashboardHeader = () => {
 
   return (
     <header
-      style={{ backgroundColor: "#4C3957" }}
+      // style={{ backgroundColor: "#4C3957" }}
       className={`main-header header-shadow z-10 ${navbar ? "fixed-header" : ""}`}
     >
       <div className="container-fluid">
@@ -42,9 +43,9 @@ const DashboardHeader = () => {
               </div>
             </div>
 
-            <HeaderNavContent />
+            {/* <HeaderNavContent /> */}
 
-            <div className="outer-box float-end ">
+            {/* <div className="outer-box float-end ">
               <button className="menu-btn">
                 <span className="count">1</span>
                 <span className="icon la la-heart-o"></span>
@@ -54,7 +55,6 @@ const DashboardHeader = () => {
                 <span className="icon la la-bell"></span>
               </button>
 
-              {/* Dropdown for Account */}
               <div className="relative">
                 <button
                   className="flex items-center space-x-2 text-white"
@@ -109,7 +109,8 @@ const DashboardHeader = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </div> */}
+            
           </div>
         </div>
       </div>

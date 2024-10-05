@@ -26,8 +26,8 @@ const SidebarFooter = () => {
             329 Queensberry Street, North Melbourne VIC <br />
             3051, Australia.
           </span>
-          <a href="mailto:support@Abroadium.com" className="email">
-            support@Abroadium.com
+          <a href="mailto:support@Novahome Care.com" className="email">
+            support@Novahome Care.com
           </a>
         </div>
         {/* End .contact-info */}

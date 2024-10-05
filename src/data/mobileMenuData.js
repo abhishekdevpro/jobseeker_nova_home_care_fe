@@ -65,10 +65,10 @@ const mobileMenudate = [
   },
   {
     id: 3,
-    label: "Abroadium id",
+    label: "Novahome Care id",
     items: [
       {
-        name: "Abroadium id",
+        name: "Novahome Care id",
         routePath: "/sentry-spot",
       },
       {

@@ -102,14 +102,14 @@ const HeaderNavContent = () => {
                       <p className="text-lg text-gray-700 mt-2 font-semibold">Sales Enquiries</p>
                       <p className="text-sm text-gray-700 my-2">1000-100-7044
                         </p>
-                      <p className="text-sm text-gray-700">sales@abroadium.tech</p>
+                      <p className="text-sm text-gray-700">sales@Novahome Care.tech</p>
                     </div>
 
                     <div className="px-4 py-3">
 
 
 <p className="text-lg text-gray-700 mt-2 font-semibold">Customer Support</p>
-<p className="text-sm text-gray-700 mt-2">sales@abroadium.tech</p>
+<p className="text-sm text-gray-700 mt-2">sales@Novahome Care.tech</p>
 </div>
                   </div>
                 )}

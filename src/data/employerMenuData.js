@@ -13,13 +13,13 @@ const employerMenu = [
     routePath: "/employers-dashboard/my-profile",
     active: "",
   },
-  {
-    id: 3,
-    name: "Company Profile",
-    icon: "la-user-tie",
-    routePath: "/employers-dashboard/company-profile",
-    active: "",
-  },
+  // {
+  //   id: 3,
+  //   name: "Company Profile",
+  //   icon: "la-user-tie",
+  //   routePath: "/employers-dashboard/company-profile",
+  //   active: "",
+  // },
   {
     id: 4,
     name: "Post a New Job",
@@ -27,20 +27,20 @@ const employerMenu = [
     routePath: "/employers-dashboard/post-jobs",
     active: "",
   },
-  {
-    id: 5,
-    name: "Community",
-    icon: "la-safari",
-    routePath: "/employers-dashboard/resume-alerts",
-    active: "",
-  },
-  {
-    id: 6,
-    name: "View",
-    icon: "la-chrome",
-    routePath: "/showcase/org",
-    active: "",
-  },
+  // {
+  //   id: 5,
+  //   name: "Community",
+  //   icon: "la-safari",
+  //   routePath: "/employers-dashboard/resume-alerts",
+  //   active: "",
+  // },
+  // {
+  //   id: 6,
+  //   name: "View",
+  //   icon: "la-chrome",
+  //   routePath: "/showcase/org",
+  //   active: "",
+  // },
   {
     id: 7,
     name: "Manage Jobs",
@@ -69,13 +69,13 @@ const employerMenu = [
     routePath: "/employers-dashboard/packages",
     active: "",
   },
-  {
-    id: 11,
-    name: "Messages",
-    icon: "la-comment-o",
-    routePath: "/employers-dashboard/messages",
-    active: "",
-  },
+  // {
+  //   id: 11,
+  //   name: "Messages",
+  //   icon: "la-comment-o",
+  //   routePath: "/employers-dashboard/messages",
+  //   active: "",
+  // },
   {
     id: 12,
     name: "Resume Alerts",
@@ -93,18 +93,18 @@ const employerMenu = [
   
   {
     id: 14,
-    name: "Buy Coin",
+    name: "Payments",
    icon: "la-bitcoin",
    routePath: "/employers-dashboard/buycoin",
   active: "",
   },
-  {
-   id: 15,
-   name: "Setting",
-  icon: "la-gear",
-  routePath: "/",
- active: "",
- },
+//   {
+//    id: 15,
+//    name: "Setting",
+//   icon: "la-gear",
+//   routePath: "/",
+//  active: "",
+//  },
  {
   id: 16,
   name: "signout",

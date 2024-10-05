@@ -18,8 +18,8 @@ import { useRef } from "react";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Job Single Dyanmic V1 || Abroadium - Job Borad ReactJs Template",
-  description: "Abroadium - Job Borad ReactJs Template",
+  title: "Job Single Dyanmic V1 || Novahome Care - Job Borad ReactJs Template",
+  description: "Novahome Care - Job Borad ReactJs Template",
 };
 
 const JobSingleDynamicV1 = () => {

@@ -18,8 +18,8 @@ import MetaComponent from "@/components/common/MetaComponent";
 import { useGetPostByIdQuery } from "@/store/slices/service/index";
 
 const metadata = {
-  title: "Job Single Dyanmic V3 || Abroadium - Job Borad ReactJs Template",
-  description: "Abroadium - Job Borad ReactJs Template",
+  title: "Job Single Dyanmic V3 || Novahome Care - Job Borad ReactJs Template",
+  description: "Novahome Care - Job Borad ReactJs Template",
 };
 
 const JobSingleDynamicV3 = () => {

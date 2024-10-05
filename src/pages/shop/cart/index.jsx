@@ -4,8 +4,8 @@ import Cart from "@/components/shop/cart";
 import MetaComponent from "@/components/common/MetaComponent";
 
 const metadata = {
-  title: "Cart || Abroadium - Job Borad ReactJs Template",
-  description: "Abroadium - Job Borad ReactJs Template",
+  title: "Cart || Novahome Care - Job Borad ReactJs Template",
+  description: "Novahome Care - Job Borad ReactJs Template",
 };
 
 const CartPage = () => {
