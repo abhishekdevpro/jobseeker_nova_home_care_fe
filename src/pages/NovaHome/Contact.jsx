@@ -20,7 +20,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-teal-0 to-teal-0 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row max-w-7xl mx-auto rounded-lg shadow-lg">
+    <div className="bg-gradient-to-br from-teal-0 to-teal-0 p-8 md:p-12 lg:p-16 flex flex-col md:flex-row mx-auto rounded-lg shadow-lg">
       <div className="md:w-1/2 mb-8 md:mb-0 md:pr-10">
         <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-teal-900 mb-6">
           Lets Talk: Reach Out To Us For Tailored Support!

@@ -11,7 +11,7 @@ const AppointmentBooking = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
+    <div className="w-full mx-auto px-4 py-8">
       <h1 className="text-3xl md:text-4xl font-bold text-teal-800 text-center mb-8">Make An Appointment</h1>
 
       <div className="flex flex-col md:flex-row justify-center items-center mb-12 space-y-4 md:space-y-0">

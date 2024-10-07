@@ -42,7 +42,7 @@ const FaqSection = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="mx-auto px-4 py-16">
       <div className="flex flex-col md:flex-row">
         <div className="md:w-[40%] mb-8 md:mb-0">
           <img

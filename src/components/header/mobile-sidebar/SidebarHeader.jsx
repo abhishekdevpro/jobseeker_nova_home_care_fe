@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../../../Images/logo.png";
+import logo from "@/pages/NovaHome/assests/logo.png";
 const SidebarHeader = () => {
   return (
     <div className="pro-header"  style={{ backgroundColor: "#4C3957" }}>

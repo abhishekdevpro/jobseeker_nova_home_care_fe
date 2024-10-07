@@ -3,7 +3,7 @@ import img1 from './assests/m1.jpg'
 import img2 from './assests/m2.jpg'
 const ElderlyManagement = () => {
   return (
-    <div className="container mx-auto p-4 md:p-8 lg:p-12">
+    <div className=" mx-auto p-4 md:p-8 lg:p-12">
       <div className="flex flex-col lg:flex-row">
         <div className="relative mb-4 lg:mb-0">
           <img

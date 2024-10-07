@@ -1,7 +1,7 @@
 
 import CopyrightFooter from "./CopyrightFooter";
 import FooterContent from "./FooterContent";
-import logo from "../../../Images/logo.png"
+import logo from "@/pages/NovaHome/assests/logo.png"
 import { Link } from "react-router-dom";
 const index = ({ footerStyle = "" }) => {
   return (

@@ -4,11 +4,11 @@ import { MdLocationOn } from 'react-icons/md';
 const Header = () => {
   return (
     <header className="bg-white text-gray-700 p-3 md:p-4 shadow-sm border-b">
-      <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+      <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-sm ">
         {/* Address Section */}
         <div className="flex items-center mb-2 md:mb-0 text-base md:text-lg">
           <MdLocationOn className="text-blue-500 mr-2" />
-          <span className="text-gray-600">
+          <span className="text-gray-600 ">
             1509 Lady St, Columbia, SC 29201, United States
           </span>
         </div>

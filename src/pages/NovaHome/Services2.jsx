@@ -35,7 +35,7 @@ const services = [
 
 const ServicesComponent = () => {
   return (
-    <div className="container mx-auto px-4 py-8 bg-gray-50">
+    <div className=" mx-auto px-4 py-8 bg-gray-50">
       <h2 className="text-lg font-semibold text-gray-600 text-center mb-2">Services</h2>
       <h3 className="text-3xl md:text-4xl font-bold text-center text-teal-700 mb-12">Explore What We Offer</h3>
       

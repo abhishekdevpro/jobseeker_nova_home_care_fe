@@ -31,7 +31,7 @@ const ServiceCard = ({ title, imageSrc }) => {
 
 const ExtensiveServices = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="mx-auto px-4 py-8 ">
       <h2 className="text-center text-teal-700 text-sm font-semibold mb-2">Our Concern</h2>
       <h1 className="text-center text-teal-700 text-4xl font-bold mb-8">Extensive Range Of Services</h1>
       
