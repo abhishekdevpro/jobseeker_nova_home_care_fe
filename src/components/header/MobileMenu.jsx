@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import MobileSidebar from "./mobile-sidebar";
-import logo from "../../Images/logo.png";
+import logo from "@/pages/NovaHome/assests/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, toggleSignupDialog } from "@/store/slices/auth";
 import { Button } from "../ui/button";
@@ -14,7 +14,7 @@ const MobileMenu = () => {
   );
   return (
     // <!-- Main Header-->
-    <header className="main-header main-header-mobile z-10"  style={{ backgroundColor: "#4C3957" }} >
+    <header className="main-header main-header-mobile z-10"  >
       <div className="auto-container">
         {/* <!-- Main box --> */}
         <div className="inner-box">
@@ -33,7 +33,7 @@ const MobileMenu = () => {
           </div>
           {/* End .nav-outer */}
 
-          <div className="outer-box">
+          {/* <div className="outer-box">
             <div className="login-box">
               {userToken ? (
                 <Button
@@ -56,7 +56,6 @@ const MobileMenu = () => {
                 </button>
               )}
             </div>
-            {/* login popup end */}
 
             <a
               href="#"
@@ -66,8 +65,7 @@ const MobileMenu = () => {
             >
               <span className="flaticon-menu-1"></span>
             </a>
-            {/* right humberger menu */}
-          </div>
+          </div> */}
         </div>
       </div>
     </header>
