@@ -1,5 +1,5 @@
 
-import Buycoin from "@/components/dashboard-pages/employers-dashboard/Buycoin";
+import Buycoin from "@/components/dashboard-pages/employers-dashboard/buycoin";
 
 import MetaComponent from "@/components/common/MetaComponent";
 
