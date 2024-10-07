@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSliderOpen, setIsSliderOpen] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState(null); // Track which category is expanded
+  const [expandedCategory, setExpandedCategory] = useState(null); 
 
   const categories = [
     { name: 'Child care', icon: MdChildCare, subcategories: ['Babysitters', 'Overnight sitters', "Mother's helpers", 'Nannies', 'Night nannies', 'Newborn nannies', 'Live-in nannies', 'Daycares', 'Family daycares'] },
@@ -20,12 +20,12 @@ const Navbar = () => {
   ];
 
   const toggleCategory = (index) => {
-    setExpandedCategory(expandedCategory === index ? null : index); // Toggle the selected category
+    setExpandedCategory(expandedCategory === index ? null : index); 
   };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="w-full mx-auto py-4 px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto py-2 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <img
@@ -37,31 +37,31 @@ const Navbar = () => {
           <div className="hidden sm:flex items-center space-x-8">
             <Link
              to={'/jobseeker-form'}
-              className="bg-teal-700 text-white px-6 py-3 text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Jobs
             </Link>
             <Link
               href="#"
-              className="bg-teal-700 text-white px-6 py-3 text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Partner with Us
             </Link>
             <Link
             to={'/login'}
-              className="bg-teal-700 text-white px-6 py-3 text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Login
             </Link>
             <Link
             to={'/register'}
-              className="bg-teal-700 text-white px-6 py-3 text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Signup
             </Link>
             <button
               onClick={() => setIsSliderOpen(!isSliderOpen)}
-              className="text-gray-500 hover:text-gray-600 focus:outline-none"
+              className="text-gray-500 focus:outline-none"
             >
               <FaBars className="h-6 w-6" />
             </button>
@@ -127,3 +127,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

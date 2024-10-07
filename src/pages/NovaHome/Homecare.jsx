@@ -91,7 +91,7 @@ const StepsToJoin = () => {
         ))}
       </div>
       <div className="flex justify-center mt-12">
-        <button className="bg-teal-700 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-teal-800">
+        <button className="bg-teal-700 text-white font-semibold py-3 px-6 rounded-md shadow-lg hover:bg-teal-800">
           Contact Now
         </button>
       </div>

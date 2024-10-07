@@ -3,23 +3,22 @@ import { MdLocationOn } from 'react-icons/md';
 
 const Header = () => {
   return (
-    <header className="bg-white text-gray-700 p-2 md:p-4 border-b-2">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
-        <div className="hidden md:flex items-center mb-2 md:mb-0 md:text-xl font-normal">
+    <header className="bg-white text-gray-700 p-3 md:p-4 shadow-sm border-b">
+      <div className=" mx-auto flex flex-col md:flex-row justify-between items-center text-sm">
+        {/* Address Section */}
+        <div className="flex items-center mb-2 md:mb-0 text-base md:text-lg">
           <MdLocationOn className="text-blue-500 mr-2" />
-          <span>1509 Lady St, Columbia, SC 29201, United States</span>
+          <span className="text-gray-600">
+            1509 Lady St, Columbia, SC 29201, United States
+          </span>
         </div>
-        <div className='flex justify-between items-center gap-4'>
-        {/* <div className="hidden md:flex text-xl font-normal items-center">
-          <MdAccessTime className="text-blue-500 mr-2" />
-          <span>Mon To Sat 9:00 AM to 8:00 PM</span>
-        </div> */}
-        <div className="flex space-x-4 mt-2 md:mt-0 text-xl font-normal">
-          <FaFacebookF className=" cursor-pointer" />
-          <FaTwitter className=" cursor-pointer" />
-          <FaWhatsapp className=" cursor-pointer" />
-          <FaInstagram className=" cursor-pointer" />
-        </div>
+
+        {/* Social Media Icons */}
+        <div className="flex space-x-4 text-blue-500 text-lg mt-2 md:mt-0">
+          <FaFacebookF className="hover:text-blue-600 transition cursor-pointer" />
+          <FaTwitter className="hover:text-blue-400 transition cursor-pointer" />
+          <FaWhatsapp className="hover:text-green-500 transition cursor-pointer" />
+          <FaInstagram className="hover:text-pink-500 transition cursor-pointer" />
         </div>
       </div>
     </header>

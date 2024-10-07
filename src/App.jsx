@@ -116,6 +116,7 @@ import Showcase from "./pages/showcase/Index";
 import EmployerList from "./pages/employers-list/employers-list";
 import Community from "./components/dashboard-pages/employers-dashboard/community/Community";
 import Novahome from './pages/Novahome.jsx'
+import ForgotPassword from "./pages/others/ForgotPassword";
 function App() {
   useEffect(() => {
     Aos.init({
@@ -256,6 +257,7 @@ function App() {
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="register" element={<RegisterPage />} />
+                <Route path="/forgot-password" element={<ForgotPassword/>}/>
                 <Route path="404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
 

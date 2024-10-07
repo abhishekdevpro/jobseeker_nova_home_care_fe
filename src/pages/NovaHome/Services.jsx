@@ -21,7 +21,7 @@ const ServiceCard = ({ title, imageSrc }) => {
         <h3 className="text-white text-lg font-semibold">{title}</h3>
       </div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <button className="bg-white text-teal-700 px-4 py-2 rounded-full text-sm">
+          <button className="bg-white text-teal-700 px-4 py-2 rounded-md text-sm">
             Know More
           </button>
         </div>

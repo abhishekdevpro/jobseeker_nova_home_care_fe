@@ -23,6 +23,7 @@ import ElderlyManagement from "./NovaHome/Management"
 import Navbar from "./NovaHome/Navbar"
 import ExtensiveServices from "./NovaHome/Services"
 import ServicesComponent from "./NovaHome/Services2"
+import JoinNovaHomeCare from './NovaHome/Homecare'
 
 
 const Home = () => {
@@ -37,7 +38,7 @@ const Home = () => {
             <AppointmentBooking />
             <ServicesComponent />
        <ElderlyManagement />
-            {/* <JoinNovaHomeCare /> */}
+            <JoinNovaHomeCare />
             <FaqSection />
             {/* <Counter /> */}
             <ContactForm/>
