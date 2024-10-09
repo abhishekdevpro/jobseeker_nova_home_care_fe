@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isSliderOpen, setIsSliderOpen] = useState(false);
-  const [expandedCategory, setExpandedCategory] = useState(null); 
+  const [expandedCategory, setExpandedCategory] = useState(null); // Track which category is expanded
 
   const categories = [
     { name: 'Child care', icon: MdChildCare, subcategories: ['Babysitters', 'Overnight sitters', "Mother's helpers", 'Nannies', 'Night nannies', 'Newborn nannies', 'Live-in nannies', 'Daycares', 'Family daycares'] },
@@ -20,40 +20,40 @@ const Navbar = () => {
   ];
 
   const toggleCategory = (index) => {
-    setExpandedCategory(expandedCategory === index ? null : index); 
+    setExpandedCategory(expandedCategory === index ? null : index); // Toggle the selected category
   };
 
   return (
     <nav className="bg-white shadow-md sticky top-0 z-50">
-      <div className="w-full mx-auto py-2 px-4 sm:px-6 lg:px-8">
+      <div className="w-full mx-auto py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <img
-              className="h-8 w-auto"
+              className="h-12 w-auto"
               src={logo}
               alt="Nova Home Care"
             />
           </div>
           <div className="hidden sm:flex items-center space-x-8">
-            <Link
-             to={`https://care1-nova-home-care-fe.vercel.app/`}
-              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+            {/* <Link
+             to={'/jobseeker-form'}
+              className="bg-teal-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Jobs
-            </Link>
-            <Link
+            </Link> */}
+            {/* <a
               href="#"
-              className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+              className="bg-teal-700 text-white px-6 py-3 rounded-full text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Partner with Us
-            </Link>
+            </a> */}
             <Link
-            to={'/login'}
+             to={'/login'}
               className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Login
             </Link>
-            <Link
+            <Link 
             to={'/register'}
               className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
@@ -61,7 +61,7 @@ const Navbar = () => {
             </Link>
             <button
               onClick={() => setIsSliderOpen(!isSliderOpen)}
-              className="text-gray-500 focus:outline-none"
+              className="text-gray-500 hover:text-gray-600 focus:outline-none"
             >
               <FaBars className="h-6 w-6" />
             </button>
@@ -81,10 +81,8 @@ const Navbar = () => {
       <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
           <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Partner with Us</a>
-          <a href="#" className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Login</a>
-          <a href="#" 
-          className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
-          >Signup</a>
+          <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Login</a>
+          <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Signup</a>
         </div>
       </div>
 
