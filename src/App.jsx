@@ -117,6 +117,8 @@ import EmployerList from "./pages/employers-list/employers-list";
 import Community from "./components/dashboard-pages/employers-dashboard/community/Community";
 import Novahome from './pages/Novahome.jsx'
 import ForgotPassword from "./pages/others/ForgotPassword";
+import JobseekerList from "./pages/Jobseeker";
+import JobseekerProfile from "@/pages/JobseekerProfile/index.jsx"
 function App() {
   useEffect(() => {
     Aos.init({
@@ -304,7 +306,7 @@ function App() {
                   />
                 </Route>
 
-                <Route path="candidates-dashboard">
+                <Route path="jobseeker-dashboard">
                   <Route path="dashboard" element={<DashboardPage />} />
                   <Route path="applied-jobs" element={<AppliedJobsPage />} />
                   <Route
@@ -336,6 +338,10 @@ function App() {
                     element={<OrderCompletedPage />}
                   />
                 </Route>
+                {/* Jobseeker Routes */}
+                <Route path="/jobseeker-list/search" element={<JobseekerList />} />
+                <Route path="/jobseeker-profile/:id" element={<JobseekerProfile />} />
+
               </Route>
             </Routes>
             <ScrollTopBehaviour />
