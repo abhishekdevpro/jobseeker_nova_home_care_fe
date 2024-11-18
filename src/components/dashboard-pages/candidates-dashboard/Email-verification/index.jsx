@@ -1,18 +1,14 @@
+
 import MobileMenu from "../../../header/MobileMenu";
 import LoginPopup from "../../../common/form/login/LoginPopup";
 import DashboardCandidatesSidebar from "../../../header/DashboardCandidatesSidebar";
 import BreadCrumb from "../../BreadCrumb";
-import MyProfile from "./components/my-profile";
-import SocialNetworkBox from "./components/SocialNetworkBox";
-import ContactInfoBox from "./components/ContactInfoBox";
-import ProfileVisalbilty from "./components/my-profile/ProfileVisalbilty";
 import CopyrightFooter from "../../CopyrightFooter";
 import DashboardCandidatesHeader from "../../../header/DashboardCandidatesHeader";
 import MenuToggler from "../../MenuToggler";
-import { Switch } from "@/components/ui/switch";
-import ProfilePage from "./components/my-profile/ProfilePage";
+import EmailVerification from "./Email-verification";
 
-const index = () => {
+const EmailVerificationPage = () => {
   return (
     <div className="page-wrapper dashboard">
       <span className="header-span"></span>
@@ -39,7 +35,7 @@ const index = () => {
           <MenuToggler />
           {/* Collapsible sidebar button */}
           <div>
-            <ProfilePage />
+            <EmailVerification />
           </div>
 
           {/* <div className="row">
@@ -116,4 +112,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default EmailVerificationPage;
