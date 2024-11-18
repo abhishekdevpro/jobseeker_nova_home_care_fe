@@ -58,7 +58,7 @@ const index = () => {
       {/* <!-- Dashboard --> */}
       <section className="user-dashboard bg-teal-50 ">
         <div className="dashboard-outer">
-          <BreadCrumb title="My Profile!" />
+          <BreadCrumb title="My Reviews!" />
           {/* breadCrumb */}
 
           <MenuToggler />

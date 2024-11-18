@@ -81,6 +81,8 @@ import CandidateListPage1 from "./pages/candidates-list/candidates-list-v1";
 import EditProfile from "./components/dashboard-pages/candidates-dashboard/my-profile/components/my-profile/EditProfile";
 import MyReviewsPage from "./components/dashboard-pages/candidates-dashboard/my-reviews";
 import EmailVerificationPage from "./components/dashboard-pages/candidates-dashboard/Email-verification";
+import DocumentPage from "./components/dashboard-pages/candidates-dashboard/Document-page";
+import MembershipPage from "./components/dashboard-pages/candidates-dashboard/Membership";
 
 function App() {
   useEffect(() => {
@@ -201,6 +203,8 @@ function App() {
                   <Route path="my-resume" element={<MyResumePage />} />
                   <Route path="my-reviews" element={<MyReviewsPage />} />
                   <Route path="verification" element={<EmailVerificationPage />} />
+                  <Route path="document" element={<DocumentPage />} />
+                  <Route path="membership" element={<MembershipPage />} />
                   <Route path="packages" element={<PackagePage />} />
                   <Route
                     path="short-listed-jobs"
