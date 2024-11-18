@@ -5,7 +5,7 @@ const MyReviews = () => {
   const [firstName, setFirstName] = useState('');
 
   return (
-    <div className="max-w-6xl mx-auto p-4 md:p-6 lg:p-8">
+    <div className="max-w-6xl mx-auto p-4 md:p-6 lg:p-8 bg-white">
       {/* Main Content Section */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {/* Left Column */}

@@ -1,3 +1,32 @@
+// import DashboardCandidatesHeader from "@/components/header/DashboardCandidatesHeader";
+// import CopyrightFooter from "@/components/dashboard-pages/CopyrightFooter";
+// import MyReviews from "./MyReviews";
+
+// const MyReviewsPage = () => {
+//   return (
+//     <div className="min-h-screen bg-gray-50">
+//       {/* Header Section */}
+//       <div className="sticky top-0 z-50">
+//         <span className="header-span"></span>
+//         <DashboardCandidatesHeader />
+//       </div>
+
+//       {/* Main Content Section */}
+//       <main className="container mx-auto px-4 py-8 md:px-6 lg:px-8">
+//         <div className="bg-white rounded-lg shadow-sm">
+//           <MyReviews />
+//         </div>
+//       </main>
+
+//       {/* Footer Section */}
+//       <div className="mt-auto">
+//         <CopyrightFooter />
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default MyReviewsPage;
 
 import MobileMenu from "../../../header/MobileMenu";
 import LoginPopup from "../../../common/form/login/LoginPopup";
@@ -6,9 +35,9 @@ import BreadCrumb from "../../BreadCrumb";
 import CopyrightFooter from "../../CopyrightFooter";
 import DashboardCandidatesHeader from "../../../header/DashboardCandidatesHeader";
 import MenuToggler from "../../MenuToggler";
-import EmailVerification from "./Email-verification";
+import MemberShipPricing from "./MembershipPricing";
 
-const EmailVerificationPage = () => {
+const MembershipPage = () => {
   return (
     <div className="page-wrapper dashboard">
       <span className="header-span"></span>
@@ -29,13 +58,12 @@ const EmailVerificationPage = () => {
       {/* <!-- Dashboard --> */}
       <section className="user-dashboard bg-teal-50 ">
         <div className="dashboard-outer">
-          <BreadCrumb title="Verification!" />
           {/* breadCrumb */}
 
           <MenuToggler />
           {/* Collapsible sidebar button */}
           <div>
-            <EmailVerification />
+            <MemberShipPricing />
           </div>
 
           {/* <div className="row">
@@ -112,4 +140,4 @@ const EmailVerificationPage = () => {
   );
 };
 
-export default EmailVerificationPage;
+export default MembershipPage;

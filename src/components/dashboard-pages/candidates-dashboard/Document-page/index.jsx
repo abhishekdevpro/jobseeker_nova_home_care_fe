@@ -1,4 +1,3 @@
-
 import MobileMenu from "../../../header/MobileMenu";
 import LoginPopup from "../../../common/form/login/LoginPopup";
 import DashboardCandidatesSidebar from "../../../header/DashboardCandidatesSidebar";
@@ -6,9 +5,9 @@ import BreadCrumb from "../../BreadCrumb";
 import CopyrightFooter from "../../CopyrightFooter";
 import DashboardCandidatesHeader from "../../../header/DashboardCandidatesHeader";
 import MenuToggler from "../../MenuToggler";
-import EmailVerification from "./Email-verification";
+import DocumentUpload from "./DocumentUpload";
 
-const EmailVerificationPage = () => {
+const DocumentPage = () => {
   return (
     <div className="page-wrapper dashboard">
       <span className="header-span"></span>
@@ -29,14 +28,14 @@ const EmailVerificationPage = () => {
       {/* <!-- Dashboard --> */}
       <section className="user-dashboard bg-teal-50 ">
         <div className="dashboard-outer">
-          <BreadCrumb title="Verification!" />
+          <BreadCrumb title="My Documents!" />
           {/* breadCrumb */}
 
           <MenuToggler />
           {/* Collapsible sidebar button */}
           <div>
-            <EmailVerification />
-          </div>
+             <DocumentUpload />
+           </div>
 
           {/* <div className="row">
             <div className="col-lg-12">
@@ -112,4 +111,4 @@ const EmailVerificationPage = () => {
   );
 };
 
-export default EmailVerificationPage;
+export default DocumentPage;
