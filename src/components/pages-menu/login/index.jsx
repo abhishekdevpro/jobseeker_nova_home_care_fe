@@ -114,7 +114,7 @@ const LoginForm = () => {
                   />
                 </div>
                 <div className="pt-4">
-                  <Link to={"/jobseekers-dashboard/dashboard"}>
+                  <Link to={"/jobseeker-dashboard/dashboard"}>
                   <button
                     type="submit"
                     className="w-full bg-teal-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 transition-all duration-200 text-lg"
