@@ -86,7 +86,7 @@
 
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaChild, FaHeart, FaHome, FaPaw, FaBook } from 'react-icons/fa';
 
 const HeroSection = () => {
@@ -124,12 +124,14 @@ const HeroSection = () => {
           <div className="text-white">
             <div className="bg-white/25 bg-opacity-30 p-8 rounded-lg shadow-lg">
               <div className="flex gap-4 items-center mb-6">
+                <Link to={"https://employer-nova-home-care-fe.vercel.app/"}>
                 <button 
                   className={`font-semibold pb-2 border-b-2 ${activeTab === 'care' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
                   onClick={() => setActiveTab('care')}
                 >
                   Find care
-                </button>
+                </button> 
+                </Link>
                 <button 
                   className={`font-semibold pb-2 border-b-2 ${activeTab === 'job' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
                   onClick={() => setActiveTab('job')}

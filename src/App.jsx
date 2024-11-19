@@ -83,6 +83,8 @@ import MyReviewsPage from "./components/dashboard-pages/candidates-dashboard/my-
 import EmailVerificationPage from "./components/dashboard-pages/candidates-dashboard/Email-verification";
 import DocumentPage from "./components/dashboard-pages/candidates-dashboard/Document-page";
 import MembershipPage from "./components/dashboard-pages/candidates-dashboard/Membership";
+import JobDetailsPage from "./pages/job-details-page";
+import DocumentUploadPage from "./pages/Document-upload";
 
 function App() {
   useEffect(() => {
@@ -230,6 +232,8 @@ function App() {
                 {/* Jobseeker Routes */}
                 <Route path="/jobseeker-list/search" element={<JobseekerList />} />
                 <Route path="/jobseeker-profile/:id" element={<JobseekerProfile />} />
+                <Route path="/jobseeker-jobdetail/:id" element={<JobDetailsPage />} />
+                <Route path="/jobseeker-upload-document" element={<DocumentUploadPage />} />
 
               </Route>
             </Routes>
