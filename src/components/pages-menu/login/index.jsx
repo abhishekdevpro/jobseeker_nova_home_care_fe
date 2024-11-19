@@ -33,7 +33,7 @@ import FormContent2 from "../../common/form/login/FormContent2";
 import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import logo from '@/pages/NovaHome/assests/logo.png';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -114,12 +114,14 @@ const LoginForm = () => {
                   />
                 </div>
                 <div className="pt-4">
+                  <Link to={"/jobseekers-dashboard/dashboard"}>
                   <button
                     type="submit"
                     className="w-full bg-teal-500 text-white font-semibold py-3 px-4 rounded-lg hover:bg-teal-600 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-opacity-50 transition-all duration-200 text-lg"
                   >
                     Login
                   </button>
+                  </Link>
                 </div>
               </form>
               {/* Forgot Password Link */}

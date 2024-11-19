@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, Clock, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const JobListingPage = () => {
   const [isFilterExpanded, setIsFilterExpanded] = useState(false);
@@ -124,7 +125,9 @@ const JobListingPage = () => {
           <div key={job.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow bg-white">
             <div className="flex justify-between items-start mb-3">
               <div>
+                <Link to={'/jobseeker-jobdetail/1'}>
                 <h2 className="text-lg font-semibold text-gray-800">{job.title}</h2>
+                 </Link>
                 <p className="text-gray-600">by {job.postedBy} • {job.area}</p>
               </div>
               <span className="bg-teal-50 text-teal-700 px-3 py-1 rounded-md text-sm">

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const DocumentUpload = () => {
   return (
@@ -56,9 +57,11 @@ const DocumentUpload = () => {
           liability related to document disclosures.
         </p>
 
-        <button className="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded mt-6">
+       <Link to={'/jobseeker-upload-document'}>
+       <button className="bg-teal-600 hover:bg-teal-700 text-white font-medium py-2 px-4 rounded mt-6">
           Add new document
         </button>
+       </Link>
       </div>
     </div>
   );
