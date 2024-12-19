@@ -85,6 +85,8 @@ import DocumentPage from "./components/dashboard-pages/candidates-dashboard/Docu
 import MembershipPage from "./components/dashboard-pages/candidates-dashboard/Membership";
 import JobDetailsPage from "./pages/job-details-page";
 import DocumentUploadPage from "./pages/Document-upload";
+import VerifyPage from "./components/pages-menu/register/VerifyPage";
+import ResetPassword from "./components/auth/ResetPassword";
 
 function App() {
   useEffect(() => {
@@ -139,7 +141,6 @@ function App() {
                   element={<JobSingleDynamicV5 />}
                 />
 
-                
                 <Route
                   path="candidates-list-v1"
                   element={<CandidateListPage1 />}
@@ -185,11 +186,17 @@ function App() {
                 <Route path="contact" element={<ContactPage />} />
                 <Route path="login" element={<LoginPage />} />
                 <Route path="register" element={<RegisterPage />} />
-                <Route path="/forgot-password" element={<ForgotPassword/>}/>
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="404" element={<NotFoundPage />} />
                 <Route path="*" element={<NotFoundPage />} />
-
-              
+                <Route
+                  path="/jobseeker/verify/:token"
+                  element={<VerifyPage />}
+                />
+                <Route
+                  path="/jobseeker/reset-password/:token"
+                  element={<ResetPassword />}
+                />
 
                 <Route path="jobseeker-dashboard">
                   <Route path="dashboard" element={<DashboardPage />} />
@@ -204,7 +211,10 @@ function App() {
                   <Route path="my-profile" element={<MyProfilePage />} />
                   <Route path="my-resume" element={<MyResumePage />} />
                   <Route path="my-reviews" element={<MyReviewsPage />} />
-                  <Route path="verification" element={<EmailVerificationPage />} />
+                  <Route
+                    path="verification"
+                    element={<EmailVerificationPage />}
+                  />
                   <Route path="document" element={<DocumentPage />} />
                   <Route path="membership" element={<MembershipPage />} />
                   <Route path="packages" element={<PackagePage />} />
@@ -227,14 +237,28 @@ function App() {
                     element={<OrderCompletedPage />}
                   />
                 </Route>
-                <Route path="/jobseeker-dashboard/edit-profile" element={<EditProfile />} />
+                <Route
+                  path="/jobseeker-dashboard/edit-profile"
+                  element={<EditProfile />}
+                />
 
                 {/* Jobseeker Routes */}
-                <Route path="/jobseeker-list/search" element={<JobseekerList />} />
-                <Route path="/jobseeker-profile/:id" element={<JobseekerProfile />} />
-                <Route path="/jobseeker-jobdetail/:id" element={<JobDetailsPage />} />
-                <Route path="/jobseeker-upload-document" element={<DocumentUploadPage />} />
-
+                <Route
+                  path="/jobseeker-list/search"
+                  element={<JobseekerList />}
+                />
+                <Route
+                  path="/jobseeker-profile/:id"
+                  element={<JobseekerProfile />}
+                />
+                <Route
+                  path="/jobseeker-jobdetail/:id"
+                  element={<JobDetailsPage />}
+                />
+                <Route
+                  path="/jobseeker-upload-document"
+                  element={<DocumentUploadPage />}
+                />
               </Route>
             </Routes>
             <ScrollTopBehaviour />
