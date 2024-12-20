@@ -1,26 +1,61 @@
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 const ProfilePage = () => {
-  const profile = {
-    name: "John J.",
+  const [profile, setProfile] = useState({
     rate: "From €10",
     rateType: "Hourly rate",
     age: "24 years old",
     location: "Ludhiana",
-    about: "I am babysitter from the Ludhiana. I can take care of your baby, feed them, play with them.",
-    experience: [
-      "Newborns (up to 12 months)",
-      "Can care for up to 2 children"
-    ],
-    services: [
-      "Pick-up / Drop off"
-    ],
-    isActive: true
-  };
+    about:
+      "I am babysitter from the Ludhiana. I can take care of your baby, feed them, play with them.",
+    experience: ["Newborns (up to 12 months)", "Can care for up to 2 children"],
+    services: ["Pick-up / Drop off"],
+    isActive: true,
+  });
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const token = localStorage.getItem("token");
+  useEffect(() => {
+    const fetchProfile = async () => {
+      try {
+        const response = await axios.get(
+          "https://api.novahome.care/api/jobseeker/getprofile",
+          {
+            headers: {
+              Authorization: token,
+            },
+          }
+        );
+        console.log(response, "response");
+        console.log(response.data.data, "response data");
+        // setProfile(response.data.data); // Assuming the API returns the profile data directly
+        // Merge default state with API response data
+        setProfile((prevProfile) => ({
+          ...prevProfile, // Keep default values
+          ...response.data.data, // Overwrite with API values
+        }));
+      } catch (err) {
+        setError("Failed to load profile");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfile();
+  }, [token]);
+
+  if (loading) {
+    return <div className="text-center py-10">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-10 text-red-500">{error}</div>;
+  }
 
   return (
     <div className="h-auto bg-gray-50 ">
@@ -30,27 +65,33 @@ const ProfilePage = () => {
           <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
             {/* Profile Image */}
             <div className="w-24 h-24 bg-gray-200 rounded-lg flex items-center justify-center text-2xl text-gray-600">
-              {profile.name.split(' ')[0][0]}
-              {profile.name.split(' ')[1][0]}
+              {profile.first_name?.[0]}
+              {profile.last_name?.[0]}
             </div>
 
             {/* Profile Info */}
             <div className="flex-grow">
               <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <h1 className="text-2xl font-semibold text-gray-900">{profile.name}</h1>
+                  <h1 className="text-2xl font-semibold text-gray-900">
+                    {profile.first_name} {profile.last_name}
+                  </h1>
                   <div className="flex items-center gap-2 mt-1">
-                    <span className="text-teal-600 font-medium">{profile.rate}</span>
-                    <span className="text-gray-500 text-sm">{profile.rateType}</span>
+                    <span className="text-teal-600 font-medium">
+                      {profile.rate}
+                    </span>
+                    <span className="text-gray-500 text-sm">
+                      {profile.rateType}
+                    </span>
                   </div>
                 </div>
-                <Link to={'/jobseeker-dashboard/edit-profile'} >
-                <Button className="bg-teal-500 hover:bg-teal-600 text-white">
-                  Edit my profile
-                </Button>
+                <Link to={"/jobseeker-dashboard/edit-profile"}>
+                  <Button className="bg-teal-500 hover:bg-teal-600 text-white">
+                    Edit my profile
+                  </Button>
                 </Link>
               </div>
-              
+
               {profile.isActive && (
                 <Badge className="mt-2 bg-green-100 text-green-800 px-2 py-1 text-xs">
                   Active today
@@ -72,12 +113,27 @@ const ProfilePage = () => {
 
           {/* Experience Section */}
           <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Experience caring for</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Experience caring for
+            </h2>
             <ul className="space-y-2">
               {profile.experience.map((exp, index) => (
-                <li key={index} className="flex items-center gap-2 text-gray-700">
-                  <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-gray-700"
+                >
+                  <svg
+                    className="w-5 h-5 text-teal-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                   {exp}
                 </li>
@@ -87,12 +143,27 @@ const ProfilePage = () => {
 
           {/* Services Section */}
           <div className="mt-8">
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Services</h2>
+            <h2 className="text-xl font-semibold text-gray-900 mb-4">
+              Services
+            </h2>
             <ul className="space-y-2">
               {profile.services.map((service, index) => (
-                <li key={index} className="flex items-center gap-2 text-gray-700">
-                  <svg className="w-5 h-5 text-teal-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                <li
+                  key={index}
+                  className="flex items-center gap-2 text-gray-700"
+                >
+                  <svg
+                    className="w-5 h-5 text-teal-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M5 13l4 4L19 7"
+                    />
                   </svg>
                   {service}
                 </li>

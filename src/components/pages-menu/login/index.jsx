@@ -170,6 +170,8 @@ const LoginForm = () => {
       const response = await axios.post("https://api.novahome.care/api/jobseeker/jobseekerLogin", formData);
 
       if (response.status === 200) {
+        const tokenKey = "token";
+        localStorage.setItem(tokenKey, response.data.data.token);
         console.log("Login successful:", response.data);
         navigate("/jobseeker-dashboard/dashboard");
       }
