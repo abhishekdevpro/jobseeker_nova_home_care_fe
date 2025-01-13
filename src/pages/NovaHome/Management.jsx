@@ -1,25 +1,28 @@
 import React from 'react';
+import ReactPlayer from "react-player";
 import img1 from './assests/m1.jpg'
 import img2 from './assests/m2.jpg'
 const ElderlyManagement = () => {
   return (
     <div className=" mx-auto p-4 md:p-8 lg:p-12">
-      <div className="flex flex-col lg:flex-row">
-        <div className="relative mb-4 lg:mb-0">
-          <img
-            src={img1}
-            alt="Elderly care"
-            className="w-full h-auto object-cover rounded-lg"
-          />
-          <div className="absolute bottom-4 right-4 lg:bottom-12 lg:right-4 w-4/12 lg:w-2/5 transform translate-x-0 lg:translate-x-0 translate-y-0 lg:translate-y-0">
-            <img
-              src={img2}
-              alt="Love Care"
-              className="w-full h-auto rounded-lg shadow-lg"
-            />
-          </div>
+      <div className="flex flex-col lg:flex-row w-full">
+        <div className="relative mb-4 lg:mb-0 w-1/2 ">
+          
+       <ReactPlayer
+                  url="https://www.youtube.com/embed/KmlLB-t6IUI"
+                  width="600px"
+                  height="500px"
+                  controls={true}
+                  style={{
+                    margin: "50px",
+                    border: "2px solid #ccc",
+                    borderRadius: "10px",
+                    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+                  }}
+                />
+         
         </div>
-        <div className="lg:pl-12 flex flex-col justify-center">
+        <div className="lg:pl-12 flex flex-col justify-center w-1/2">
           <h2 className="text-teal-700 text-sm font-semibold mb-2">About Us</h2>
           <h1 className="text-teal-700 text-3xl md:text-4xl font-bold mb-4">
             Skilled Elderly Management
