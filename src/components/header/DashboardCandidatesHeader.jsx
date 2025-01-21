@@ -25,7 +25,9 @@ const DashboardCandidatesHeader = () => {
     // <!-- Main Header-->
     <header
       // style={{ backgroundColor: "#4C3957" }}
-      className={`main-header header-shadow z-10 ${navbar ? "fixed-header" : ""}`}
+      className={`main-header header-shadow z-10 ${
+        navbar ? "fixed-header" : ""
+      }`}
     >
       <div className="container-fluid">
         <div className="main-box ">
@@ -38,6 +40,14 @@ const DashboardCandidatesHeader = () => {
               </div>
             </div>
 
+            <div className="px-4 py-2">
+              <Link
+                to="/aboutus"
+                className="bg-teal-500 text-white rounded-md mb-1 items-center px-4 py-2 semi-bold"
+              >
+                About Us
+              </Link>
+            </div>
             {/* <HeaderNavContent /> */}
 
             {/* <div className="outer-box float-end ">
@@ -105,7 +115,6 @@ const DashboardCandidatesHeader = () => {
                 )}
               </div>
             </div> */}
-            
           </div>
         </div>
       </div>
