@@ -30,7 +30,9 @@ const DashboardHeader = () => {
   return (
     <header
       // style={{ backgroundColor: "#4C3957" }}
-      className={`main-header header-shadow z-10 ${navbar ? "fixed-header" : ""}`}
+      className={`main-header header-shadow z-10 ${
+        navbar ? "fixed-header" : ""
+      }`}
     >
       <div className="container-fluid">
         <div className="main-box ">
@@ -110,7 +112,6 @@ const DashboardHeader = () => {
                 )}
               </div>
             </div> */}
-            
           </div>
         </div>
       </div>

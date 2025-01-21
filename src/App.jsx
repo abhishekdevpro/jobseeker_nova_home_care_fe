@@ -73,10 +73,10 @@ import OrderCompletedPage from "./pages/shop/order-completed";
 import { Toaster } from "react-hot-toast";
 import SignUpDialog from "./components/auth/SignUp";
 import Showcase from "./pages/showcase/Index";
-import Novahome from './pages/Novahome.jsx'
+import Novahome from "./pages/Novahome.jsx";
 import ForgotPassword from "./pages/others/ForgotPassword";
 import JobseekerList from "./pages/Jobseeker";
-import JobseekerProfile from "@/pages/JobseekerProfile/index.jsx"
+import JobseekerProfile from "@/pages/JobseekerProfile/index.jsx";
 import CandidateListPage1 from "./pages/candidates-list/candidates-list-v1";
 import EditProfile from "./components/dashboard-pages/candidates-dashboard/my-profile/components/my-profile/EditProfile";
 import MyReviewsPage from "./components/dashboard-pages/candidates-dashboard/my-reviews";
@@ -87,6 +87,7 @@ import JobDetailsPage from "./pages/job-details-page";
 import DocumentUploadPage from "./pages/Document-upload";
 import VerifyPage from "./components/pages-menu/register/VerifyPage";
 import ResetPassword from "./components/auth/ResetPassword";
+import Aboutus from "./components/AboutUs/Aboutus";
 
 function App() {
   useEffect(() => {
@@ -124,6 +125,7 @@ function App() {
                   path="job-single-v1/:id"
                   element={<JobSingleDynamicV1 />}
                 />
+                <Route path="/aboutus" element={<Aboutus />} />
                 <Route
                   path="job-single-v2/:id"
                   element={<JobSingleDynamicV2 />}
