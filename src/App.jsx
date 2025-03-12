@@ -88,6 +88,8 @@ import DocumentUploadPage from "./pages/Document-upload";
 import VerifyPage from "./components/pages-menu/register/VerifyPage";
 import ResetPassword from "./components/auth/ResetPassword";
 import Aboutus from "./components/AboutUs/Aboutus";
+import Aboutus2 from "./pages/NovaHome/AboutUs/Aboutus";
+import JobListing from "./pages/NovaHome/JobListing/JobListing";
 
 function App() {
   useEffect(() => {
@@ -106,6 +108,8 @@ function App() {
               <Route path="/">
                 {/* <Route index element={<Home />} /> */}
                 <Route index element={<Novahome />} />
+                <Route path="/care-aboutus" element={<Aboutus2 />} />
+                <Route path="/care-job-listing" element={<JobListing />} />
                 <Route path="showcase/:org" element={<Showcase />} />
                 <Route path="job-list-v1" element={<JobListPage1 />} />
                 <Route path="job-list-v2" element={<JobListPage2 />} />

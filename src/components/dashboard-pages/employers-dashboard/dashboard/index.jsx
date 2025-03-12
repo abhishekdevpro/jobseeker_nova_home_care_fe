@@ -9,7 +9,7 @@ import Notification from "./components/Notification";
 import Applicants from "./components/Applicants";
 import CopyrightFooter from "../../CopyrightFooter";
 import MenuToggler from "../../MenuToggler";
-import Navbar from "@/pages/NovaHome/Navbar";
+import Navbar from "@/pages/NovaHome/Header/Navbar";
 
 const Index = () => {
   return (
