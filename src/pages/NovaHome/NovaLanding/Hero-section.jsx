@@ -1,4 +1,3 @@
-
 // import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import { FaSearch, FaChild, FaHeart, FaHome, FaPaw, FaBook } from 'react-icons/fa';
@@ -83,23 +82,28 @@
 
 // export default HeroSection;
 
-
-
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaSearch, FaChild, FaHeart, FaHome, FaPaw, FaBook } from 'react-icons/fa';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  FaSearch,
+  FaChild,
+  FaHeart,
+  FaHome,
+  FaPaw,
+  FaBook,
+} from "react-icons/fa";
 
 const HeroSection = () => {
-  const [zipCode, setZipCode] = useState('');
-  const [activeTab, setActiveTab] = useState('care');
+  const [zipCode, setZipCode] = useState("");
+  const [activeTab, setActiveTab] = useState("care");
   const navigate = useNavigate();
 
   const handleSearch = () => {
     if (zipCode) {
-      if (activeTab === 'care') {
-        navigate('/form', { state: { zipCode } });
+      if (activeTab === "care") {
+        navigate("/form", { state: { zipCode } });
       } else {
-        navigate('/job-form', { state: { zipCode } });
+        navigate("/job-form", { state: { zipCode } });
       }
     }
   };
@@ -125,16 +129,24 @@ const HeroSection = () => {
             <div className="bg-white/25 bg-opacity-30 p-8 rounded-lg shadow-lg">
               <div className="flex gap-4 items-center mb-6">
                 <Link to={"https://employer-nova-home-care-fe.vercel.app/"}>
-                <button 
-                  className={`font-semibold pb-2 border-b-2 ${activeTab === 'care' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
-                  onClick={() => setActiveTab('care')}
-                >
-                  Find care
-                </button> 
+                  <button
+                    className={`font-semibold pb-2 border-b-2 ${
+                      activeTab === "care"
+                        ? "text-teal-400 border-teal-400"
+                        : "text-white border-transparent hover:border-white"
+                    }`}
+                    onClick={() => setActiveTab("care")}
+                  >
+                    Find care
+                  </button>
                 </Link>
-                <button 
-                  className={`font-semibold pb-2 border-b-2 ${activeTab === 'job' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
-                  onClick={() => setActiveTab('job')}
+                <button
+                  className={`font-semibold pb-2 border-b-2 ${
+                    activeTab === "job"
+                      ? "text-teal-400 border-teal-400"
+                      : "text-white border-transparent hover:border-white"
+                  }`}
+                  onClick={() => setActiveTab("job")}
                 >
                   Find a job
                 </button>
@@ -163,15 +175,17 @@ const HeroSection = () => {
               {/* Icon Section */}
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
                 {[
-                  { icon: FaChild, label: 'Child care' },
-                  { icon: FaHeart, label: 'Senior care' },
-                  { icon: FaHome, label: 'Housekeeping' },
-                  { icon: FaPaw, label: 'Pet care' },
-                  { icon: FaBook, label: 'Tutoring' },
+                  { icon: FaChild, label: "Child care" },
+                  { icon: FaHeart, label: "Senior care" },
+                  { icon: FaHome, label: "Housekeeping" },
+                  { icon: FaPaw, label: "Pet care" },
+                  { icon: FaBook, label: "Tutoring" },
                 ].map((item, index) => (
                   <div key={index} className="text-center">
                     <item.icon className="mx-auto mb-2 text-teal-400 text-4xl" />
-                    <p className="text-sm text-white font-medium">{item.label}</p>
+                    <p className="text-sm text-white font-medium">
+                      {item.label}
+                    </p>
                   </div>
                 ))}
               </div>

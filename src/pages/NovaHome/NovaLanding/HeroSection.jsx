@@ -595,9 +595,17 @@
 
 // export default CareerAdvisorPage;
 
-
 import React, { useState, useEffect } from "react";
-import { FaBook, FaChild, FaHeart, FaHome, FaPaw, FaSearch, FaTimes } from "react-icons/fa";
+import {
+  FaBook,
+  FaChild,
+  FaHeart,
+  FaHome,
+  FaPaw,
+  FaSearch,
+  FaTimes,
+  FaWheelchair,
+} from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import videoSrc from "../assests/herovideo.mp4";
 import axios from "axios";
@@ -616,19 +624,32 @@ const CareerAdvisorPage = () => {
 
   const [selectedOption, setSelectedOption] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [zipCode, setZipCode] = useState('');
-    const [activeTab, setActiveTab] = useState('care');
-    // const navigate = useNavigate();
-  
-    const handleSearch = () => {
-      if (zipCode) {
-        navigate('/care-job-listing')
-      }
-      else{
-        navigate('/care-job-listing')
-      }
-    };
+  const [zipCode, setZipCode] = useState("");
+  const [activeTab, setActiveTab] = useState("care");
+  // const navigate = useNavigate();
+  const partnerOptions = [
+    "DME Providers",
+    "Medical Billing Partners",
+    "Homecare Services",
+  ];
+  const handleSearch = () => {
+    if (zipCode) {
+      navigate("/care-job-listing");
+    } else {
+      navigate("/care-job-listing");
+    }
+  };
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+    if (option === "Partner") {
+      setIsModalOpen(true);
+    }
+  };
 
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setSelectedOption("");
+  };
   const options = ["Care Giver", "Care Taker", "Partner"];
 
   // Helper function to check file type
@@ -646,15 +667,16 @@ const CareerAdvisorPage = () => {
   // Render background media based on file type
   const renderBackgroundMedia = (mediaUrl) => {
     const fileType = getFileType(mediaUrl);
-    const defaultVideo = "https://wedesignthemes.s3.amazonaws.com/thatha/Slider+VDO+02+HD.mp4";
+    const defaultVideo =
+      "https://wedesignthemes.s3.amazonaws.com/thatha/Slider+VDO+02+HD.mp4";
 
     if (!mediaUrl) {
       return (
-        <video 
-          autoPlay 
-          loop 
-          muted 
-          src={defaultVideo} 
+        <video
+          autoPlay
+          loop
+          muted
+          src={defaultVideo}
           type="video/mp4"
           className="absolute inset-0 w-full h-full object-cover"
         >
@@ -666,9 +688,9 @@ const CareerAdvisorPage = () => {
     switch (fileType) {
       case "image":
         return (
-          <img 
-            src={mediaUrl} 
-            alt="Background" 
+          <img
+            src={mediaUrl}
+            alt="Background"
             className="absolute inset-0 w-full h-full object-cover"
           />
         );
@@ -687,11 +709,11 @@ const CareerAdvisorPage = () => {
         );
       default:
         return (
-          <video 
-            autoPlay 
-            loop 
-            muted 
-            src={defaultVideo} 
+          <video
+            autoPlay
+            loop
+            muted
+            src={defaultVideo}
             type="video/mp4"
             className="absolute inset-0 w-full h-full object-cover"
           >
@@ -767,25 +789,16 @@ const CareerAdvisorPage = () => {
     getCategory();
   }, [token]);
 
-  const handleOptionChange = (option) => {
-    setSelectedOption(option);
-    setIsModalOpen(true);
-  };
+  //   const handleSearch = (e) => {
+  //     e.preventDefault();
+  //     const params = new URLSearchParams();
+  //     if (searchJob) params.append("title_keywords", searchJob);
+  //     if (location) params.append("location", location);
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-//   const handleSearch = (e) => {
-//     e.preventDefault();
-//     const params = new URLSearchParams();
-//     if (searchJob) params.append("title_keywords", searchJob);
-//     if (location) params.append("location", location);
-
-//     const searchUrl = `/user/job/1?${params.toString()}`;
-//     console.log(searchUrl, "urrrrrlllll");
-//     navigate(searchUrl);
-//   };
+  //     const searchUrl = `/user/job/1?${params.toString()}`;
+  //     console.log(searchUrl, "urrrrrlllll");
+  //     navigate(searchUrl);
+  //   };
 
   if (loading) {
     return (
@@ -802,7 +815,6 @@ const CareerAdvisorPage = () => {
         {renderBackgroundMedia(pageData?.home_here_section?.BackgroundMedia)}
         {/* <div className="absolute inset-0 bg-gray-700 bg-opacity-50"></div> */}
         <div className="absolute inset-0 bg-black/50 backdrop-blur-sm"></div>
-
       </div>
 
       {/* Content container */}
@@ -811,17 +823,15 @@ const CareerAdvisorPage = () => {
         <h1 className="text-5xl sm:text-6xl text-white font-bold mb-2">
           {pageData?.home_here_section?.title || "Hello, I'm Aria,"}
         </h1>
-        
+
         {/* Subheading */}
         <h2 className="text-2xl sm:text-3xl text-pink-500 font-semibold mb-12">
           {pageData?.home_here_section?.description ||
             "Your Personal Care Advisor!"}
         </h2>
-        
+
         {/* "Are You?" text */}
-        <p className="text-3xl text-white font-bold mb-6">
-          Are You?
-        </p>
+        <p className="text-3xl text-white font-bold mb-6">Are You?</p>
 
         {/* Option buttons */}
         <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -829,7 +839,7 @@ const CareerAdvisorPage = () => {
             <button
               key={index}
               className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
-              // onClick={() => handleOptionChange(option)}
+              onClick={() => handleOptionChange(option)}
             >
               {option}
             </button>
@@ -870,11 +880,11 @@ const CareerAdvisorPage = () => {
           </form>
         </div> */}
         <div className="relative z-10 h-full w-full flex items-center justify-center ">
-                <div className="w-full max-w-5xl px-4 lg:px-8 ">
-                  <div className="text-white">
-                    <div className="bg-white/25 bg-opacity-30 p-8 rounded-lg shadow-lg">
-                      <div className="flex gap-4 items-center mb-6">
-                        {/* <Link to={"https://employer-nova-home-care-fe.vercel.app/"}>
+          <div className="w-full max-w-5xl px-4 lg:px-8 ">
+            <div className="text-white">
+              <div className="bg-white/25 bg-opacity-30 p-8 rounded-lg shadow-lg">
+                <div className="flex gap-4 items-center mb-6">
+                  {/* <Link to={"https://employer-nova-home-care-fe.vercel.app/"}>
                         <button 
                           className={`font-semibold pb-2 border-b-2 ${activeTab === 'care' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
                           onClick={() => setActiveTab('care')}
@@ -882,64 +892,67 @@ const CareerAdvisorPage = () => {
                           Find care
                         </button> 
                         </Link> */}
-                        {/* <button 
+                  {/* <button 
                           className={`font-semibold pb-2 border-b-2 ${activeTab === 'job' ? 'text-teal-400 border-teal-400' : 'text-white border-transparent hover:border-white'}`}
                           onClick={() => setActiveTab('job')}
                         >
                           Find a job
                         </button> */}
-                      </div>
-        
-                      {/* Search Input */}
-                      <div className="flex mb-6">
-                        <div className="relative flex-grow">
-                          <input
-                            type="text"
-                            placeholder="Enter ZIP code"
-                            value={zipCode}
-                            onChange={(e) => setZipCode(e.target.value)}
-                            className="w-full p-3 rounded-lg border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-400"
-                          />
-                          <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
-                        </div>
-                        <button
-                          className="ml-4 bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg transition duration-300"
-                          onClick={handleSearch}
-                        >
-                          Search
-                        </button>
-                      </div>
-        
-                      {/* Icon Section */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-                        {[
-                          { icon: FaChild, label: 'Child care' },
-                          { icon: FaHeart, label: 'Senior care' },
-                          { icon: FaHome, label: 'Housekeeping' },
-                          { icon: FaPaw, label: 'Pet care' },
-                          { icon: FaBook, label: 'Tutoring' },
-                        ].map((item, index) => (
-                          <div key={index} className="text-center">
-                            <item.icon className="mx-auto mb-2 text-center text-teal-400 text-4xl" />
-                            <p className="text-sm text-center text-white font-medium">{item.label}</p>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
+                </div>
+
+                {/* Search Input */}
+                <div className="flex mb-6">
+                  <div className="relative flex-grow">
+                    <input
+                      type="text"
+                      placeholder="Enter ZIP code"
+                      value={zipCode}
+                      onChange={(e) => setZipCode(e.target.value)}
+                      className="w-full p-3 rounded-lg border border-gray-300 text-gray-900 focus:outline-none focus:ring-2 focus:ring-teal-400"
+                    />
+                    <FaSearch className="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400" />
                   </div>
+                  <button
+                    className="ml-4 bg-teal-600 hover:bg-teal-700 text-white px-8 py-3 rounded-lg transition duration-300"
+                    onClick={handleSearch}
+                  >
+                    Search
+                  </button>
+                </div>
+
+                {/* Icon Section */}
+                <div className="grid grid-cols-3 md:grid-cols-6 gap-6">
+                  {[
+                    { icon: FaChild, label: "Child care" },
+                    { icon: FaHeart, label: "Senior care" },
+                    { icon: FaHome, label: "Housekeeping" },
+                    { icon: FaPaw, label: "Pet care" },
+                    { icon: FaBook, label: "Tutoring" },
+                    { icon: FaWheelchair, label: "DME" },
+                  ].map((item, index) => (
+                    <div key={index} className="flex flex-col items-center">
+                      <item.icon className="text-teal-400 text-4xl" />
+                      <p className="text-sm text-white font-medium mt-2">
+                        {item.label}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Modal */}
       {isModalOpen && (
         <>
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-70 z-50"
             onClick={closeModal}
           ></div>
           <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 max-w-md w-full">
-            <button 
+            <button
               onClick={closeModal}
               className="absolute top-4 right-4 bg-transparent border-none text-gray-600 hover:text-gray-900"
             >
@@ -948,7 +961,35 @@ const CareerAdvisorPage = () => {
             <h3 className="text-xl text-gray-700 text-center mb-6">
               {selectedOption} Form
             </h3>
-            {/* Form content would go here */}
+          </div>
+        </>
+      )}
+      {isModalOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-70 z-50"
+            onClick={closeModal}
+          ></div>
+          <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white p-6 rounded-lg shadow-xl z-50 max-w-md w-full">
+            <button
+              onClick={closeModal}
+              className="absolute top-4 right-4 text-gray-600 hover:text-gray-900"
+            >
+              <FaTimes className="text-xl" />
+            </button>
+            <h3 className="text-xl font-bold text-gray-700 text-center mb-4">
+              Partner Options
+            </h3>
+            <ul className="space-y-3">
+              {partnerOptions.map((partner, idx) => (
+                <li
+                  key={idx}
+                  className="bg-teal-100 px-4 py-2 rounded-md text-center cursor-pointer hover:bg-teal-200"
+                >
+                  {partner}
+                </li>
+              ))}
+            </ul>
           </div>
         </>
       )}

@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 // Service data
 const services = [
-  { name: 'Child care', icon: '👶' },
-  { name: 'Senior care', icon: '🤝' },
-  { name: 'Housekeeping', icon: '🏠' },
-  { name: 'Pet care', icon: '🐾' },
-  { name: 'Tutoring', icon: '📝' },
+  { name: "Child care", icon: "👶" },
+  { name: "Senior care", icon: "🤝" },
+  { name: "Housekeeping", icon: "🏠" },
+  { name: "Pet care", icon: "🐾" },
+  { name: "Tutoring", icon: "📝" },
 ];
 
 // Popup component
@@ -49,12 +49,12 @@ const ServiceCard = ({ name, icon }) => {
   };
 
   const handleCareClick = () => {
-    navigate('/form');
+    navigate("/form");
   };
 
-  const handlejobclick=()=>{
-    navigate('/job-form')
-  }
+  const handlejobclick = () => {
+    navigate("/job-form");
+  };
 
   return (
     <>
@@ -73,8 +73,9 @@ const ServiceCard = ({ name, icon }) => {
           >
             Find care
           </button>
-          <button className="bg-orange-500 text-white px-4 py-2 rounded-full"
-           onClick={handlejobclick}
+          <button
+            className="bg-orange-500 text-white px-4 py-2 rounded-full"
+            onClick={handlejobclick}
           >
             Find a job
           </button>

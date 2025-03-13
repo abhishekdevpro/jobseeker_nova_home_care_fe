@@ -1,9 +1,15 @@
-
-import { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import { MdChildCare, MdSchool, MdElderlyWoman, MdPets, MdCleaningServices, MdWork } from 'react-icons/md';
-import logo from '../assests/logo.png';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import {
+  MdChildCare,
+  MdSchool,
+  MdElderlyWoman,
+  MdPets,
+  MdCleaningServices,
+  MdWork,
+} from "react-icons/md";
+import logo from "../assests/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,12 +17,26 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState(null); // Track which category is expanded
 
   const categories = [
-    { name: 'Child care', icon: MdChildCare, subcategories: ['Babysitters', 'Overnight sitters', "Mother's helpers", 'Nannies', 'Night nannies', 'Newborn nannies', 'Live-in nannies', 'Daycares', 'Family daycares'] },
-    { name: 'Tutoring', icon: MdSchool },
-    { name: 'Senior care', icon: MdElderlyWoman },
-    { name: 'Pet care', icon: MdPets },
-    { name: 'Housekeeping', icon: MdCleaningServices },
-    { name: 'Jobs', icon: MdWork },
+    {
+      name: "Child care",
+      icon: MdChildCare,
+      subcategories: [
+        "Babysitters",
+        "Overnight sitters",
+        "Mother's helpers",
+        "Nannies",
+        "Night nannies",
+        "Newborn nannies",
+        "Live-in nannies",
+        "Daycares",
+        "Family daycares",
+      ],
+    },
+    { name: "Tutoring", icon: MdSchool },
+    { name: "Senior care", icon: MdElderlyWoman },
+    { name: "Pet care", icon: MdPets },
+    { name: "Housekeeping", icon: MdCleaningServices },
+    { name: "Jobs", icon: MdWork },
   ];
 
   const toggleCategory = (index) => {
@@ -28,11 +48,7 @@ const Navbar = () => {
       <div className="w-full mx-auto py-3 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <img
-              className="h-12 w-auto"
-              src={logo}
-              alt="Nova Home Care"
-            />
+            <img className="h-12 w-auto" src={logo} alt="Nova Home Care" />
           </div>
           <div className="hidden sm:flex items-center space-x-8">
             {/* <Link
@@ -47,14 +63,14 @@ const Navbar = () => {
             >
               Partner with Us
             </a> */}
-             <Link
-             to={'/care-aboutus'}
+            <Link
+              to={"/care-aboutus"}
               className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               About Us
             </Link>
             <Link
-             to={'/login'}
+              to={"/login"}
               className="bg-teal-700 text-white px-6 py-2 rounded-md text-lg font-medium hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
             >
               Login
@@ -77,23 +93,52 @@ const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-teal-500"
             >
-              {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+              {isOpen ? (
+                <FaTimes className="h-6 w-6" />
+              ) : (
+                <FaBars className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
       </div>
 
       {/* Mobile menu */}
-      <div className={`${isOpen ? 'block' : 'hidden'} sm:hidden`}>
+      <div className={`${isOpen ? "block" : "hidden"} sm:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1">
-          <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Partner with Us</a>
-          <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Login</a>
-          <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Signup</a>
+          <a
+            href="/care-aboutus"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+          >
+            About Us
+          </a>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+          >
+            Partner with Us
+          </a>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+          >
+            Login
+          </a>
+          <a
+            href="#"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+          >
+            Signup
+          </a>
         </div>
       </div>
 
       {/* Slider menu */}
-      <div className={`fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl z-50 transform ${isSliderOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-300 ease-in-out`}>
+      <div
+        className={`fixed inset-y-0 right-0 max-w-xs w-full bg-white shadow-xl z-50 transform ${
+          isSliderOpen ? "translate-x-0" : "translate-x-full"
+        } transition-transform duration-300 ease-in-out`}
+      >
         <div className="p-6">
           <button
             onClick={() => setIsSliderOpen(false)}
@@ -116,7 +161,12 @@ const Navbar = () => {
                   <ul className="ml-6 mt-2 space-y-2">
                     {category.subcategories.map((sub, subIndex) => (
                       <li key={subIndex}>
-                        <a href="#" className="text-gray-600 hover:text-teal-600">{sub}</a>
+                        <a
+                          href="#"
+                          className="text-gray-600 hover:text-teal-600"
+                        >
+                          {sub}
+                        </a>
                       </li>
                     ))}
                   </ul>
@@ -131,4 +181,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

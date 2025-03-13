@@ -113,6 +113,7 @@ const services = [
   { name: "Housekeeping", icon: "🏠" },
   { name: "Pet care", icon: "🐾" },
   { name: "Tutoring", icon: "📚" },
+  { name: "DME", icon: "📚" },
 ];
 
 const CareServicesNav = () => {

@@ -65,9 +65,10 @@ function MoreServices({ moreServicesData }) {
                 fontSize: "clamp(14px, 5vw, 20px)",
                 fontWeight: "semibold",
               }}
-            >
-              {moreServicesData.paragraph4}
-            </h1>
+              dangerouslySetInnerHTML={{
+                __html: moreServicesData.paragraph4,
+              }}
+            ></h1>
           </div>
         </div>
       </div>
