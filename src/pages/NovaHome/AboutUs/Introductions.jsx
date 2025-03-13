@@ -41,10 +41,12 @@ function Introductions({ introductionData }) {
           </div>
           <div className="mt-4 mb-4 text-center">
             <iframe
-              src={pdfData[0]}
+              src={`https://apiwl.novajobs.us${pdfData[0]}`}
               width="800px"
               height="500px"
               style={{
+                display: "flex",
+                justifyContent: "center",
                 border: "2px solid #ccc",
                 borderRadius: "10px",
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
