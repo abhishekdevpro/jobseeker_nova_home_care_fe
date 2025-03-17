@@ -80,9 +80,10 @@ import React, { useState } from "react";
 import { FaStar, FaRegEdit, FaBook, FaWheelchair } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import WhyChooseUsSection from "./WhyChooseUs";
-import CareGiver from "./Caregiver";
+
 import DMEProvider from "./DMEProvider";
 import HomeCareBuisness from "./HomeCareBuisness";
+import CareGiver from "./CareGiver";
 
 const JobPortalSection = () => {
   const [hoveredBox, setHoveredBox] = useState("jobSeeker");
