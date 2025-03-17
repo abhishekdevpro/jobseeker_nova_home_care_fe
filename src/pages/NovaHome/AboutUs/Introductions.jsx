@@ -9,7 +9,7 @@ function Introductions({ introductionData }) {
     <div className="mt-5">
       <div className="mx-3 mx-lg-5 mb-4 mb-lg-0">
         <div>
-          <h1 className="mb-4 h1">{introductionData.title}</h1>
+          <h1 className="mb-4 ">{introductionData.title}</h1>
           <div
             dangerouslySetInnerHTML={{ __html: introductionData.paragraph1 }}
           ></div>
@@ -39,14 +39,12 @@ function Introductions({ introductionData }) {
           <div className="mt-4 ">
             <h3 className="mb-4">{introductionData.paragraph4}</h3>
           </div>
-          <div className="mt-4 mb-4 text-center">
+          <div className="mt-4 mb-4 text-center mx-3 mx-lg-5 d-flex justify-content-center">
             <iframe
               src={`https://apiwl.novajobs.us${pdfData[0]}`}
-              width="800px"
+              width="700px"
               height="500px"
               style={{
-                display: "flex",
-                justifyContent: "center",
                 border: "2px solid #ccc",
                 borderRadius: "10px",
                 boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
