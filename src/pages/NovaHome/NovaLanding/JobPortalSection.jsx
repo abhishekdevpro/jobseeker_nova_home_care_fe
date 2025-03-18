@@ -211,7 +211,8 @@ const JobPortalSection = () => {
               <div className="flex items-center gap-3">
                 <FaBook className="text-teal-700 text-xl transition-colors duration-300 group-hover:text-white" />
                 <h3 className="text-lg font-semibold m-0 group-hover:text-white">
-                  Seamless Medical Billing
+                  {/* Seamless Medical Billing */}
+                  Medical Billing Partners
                 </h3>
               </div>
               <p className="text-sm m-0 group-hover:text-white text-teal-700">
