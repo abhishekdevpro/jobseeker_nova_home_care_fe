@@ -84,6 +84,7 @@ import WhyChooseUsSection from "./WhyChooseUs";
 import DMEProvider from "./DMEProvider";
 import HomeCareBuisness from "./HomeCareBuisness";
 import CareGiver from "./CareGiver";
+import SeamlessMedicalBilling from "./SeamlessMedical";
 
 const JobPortalSection = () => {
   const [hoveredBox, setHoveredBox] = useState("jobSeeker");
@@ -200,6 +201,33 @@ const JobPortalSection = () => {
               </Link>
             </div>
           </div>
+          {/* Seamless Medical Billing Box */}
+          <div
+            className="rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm text-teal-700 hover:bg-teal-500 hover:text-white group"
+            onMouseEnter={() => setHoveredBox("seamless")}
+            onMouseLeave={() => setHoveredBox("jobSeeker")}
+          >
+            <div className="flex flex-col gap-4 items-start text-left">
+              <div className="flex items-center gap-3">
+                <FaBook className="text-teal-700 text-xl transition-colors duration-300 group-hover:text-white" />
+                <h3 className="text-lg font-semibold m-0 group-hover:text-white">
+                  Seamless Medical Billing
+                </h3>
+              </div>
+              <p className="text-sm m-0 group-hover:text-white text-teal-700">
+                Streamline claims, payments, and revenue cycle management with
+                NovaHomeCare
+              </p>
+              <Link to="/login" className="no-underline">
+                <button
+                  type="button"
+                  className="bg-teal-700 text-white font-medium py-2 px-4 rounded-md transition-colors duration-300"
+                >
+                  CTA Get Started for Free
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
 
         {/* Conditional Rendering of Sections */}
@@ -208,6 +236,7 @@ const JobPortalSection = () => {
           {hoveredBox === "caregiver" && <CareGiver />}
           {hoveredBox === "dme" && <DMEProvider />}
           {hoveredBox === "homecare" && <HomeCareBuisness />}
+          {hoveredBox === "seamless" && <SeamlessMedicalBilling />}
         </div>
       </div>
     </div>
@@ -215,3 +244,180 @@ const JobPortalSection = () => {
 };
 
 export default JobPortalSection;
+// import React, { useState } from "react";
+// import { FaStar, FaRegEdit, FaBook, FaWheelchair } from "react-icons/fa";
+// import { Link } from "react-router-dom";
+// import WhyChooseUsSection from "./WhyChooseUs";
+// import DMEProvider from "./DMEProvider";
+// import HomeCareBuisness from "./HomeCareBuisness";
+// import CareGiver from "./CareGiver";
+// import SeamlessMedicalBilling from "./SeamlessMedical";
+
+// const JobPortalSection = () => {
+//   const [activeBox, setActiveBox] = useState("jobSeeker");
+
+//   const handleClick = (boxName) => {
+//     setActiveBox((prev) => (prev === boxName ? "" : boxName)); // Toggle functionality
+//   };
+
+//   return (
+//     <div className="w-full py-16 bg-white/50 text-white text-center relative">
+//       <div className="md:container mx-auto px-4">
+//         <div className="flex gap-6 justify-center flex-wrap md:flex-nowrap relative">
+//           {/* Job Seeker Box */}
+//           <div
+//             className={`rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm
+//             ${
+//               activeBox === "jobSeeker"
+//                 ? "bg-teal-500 text-white"
+//                 : "text-teal-700 hover:bg-teal-500 hover:text-white group"
+//             }`}
+//             onClick={() => handleClick("jobSeeker")}
+//           >
+//             <div className="flex flex-col gap-4 items-start text-left">
+//               <div className="flex items-center gap-3">
+//                 <FaStar className="text-xl transition-colors duration-300" />
+//                 <h3 className="text-lg font-semibold m-0">
+//                   Looking For a Care Job
+//                 </h3>
+//               </div>
+//               <p className="text-sm m-0">
+//                 Search Jobs with advanced filters and the power of AI
+//               </p>
+//               <Link to="/login" className="no-underline">
+//                 <button className="bg-teal-700 text-white font-medium py-2 px-4 rounded-md w-full">
+//                   Apply Now
+//                 </button>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Employer Box */}
+//           <div
+//             className={`rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm
+//             ${
+//               activeBox === "caregiver"
+//                 ? "bg-teal-500 text-white"
+//                 : "text-teal-700 hover:bg-teal-500 hover:text-white group"
+//             }`}
+//             onClick={() => handleClick("caregiver")}
+//           >
+//             <div className="flex flex-col gap-4 items-start text-left">
+//               <div className="flex items-center gap-3">
+//                 <FaRegEdit className="text-xl transition-colors duration-300" />
+//                 <h3 className="text-lg font-semibold m-0">
+//                   Are you looking for CareGiver?
+//                 </h3>
+//               </div>
+//               <p className="text-sm m-0">
+//                 Get Reliable Care with Trusted Caregivers
+//               </p>
+//               <Link to="/login" className="no-underline">
+//                 <button className="bg-teal-700 text-whitefont-medium py-2 px-4 rounded-md w-full">
+//                   Search Caregivers
+//                 </button>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* DME Provider Box */}
+//           <div
+//             className={`rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm
+//             ${
+//               activeBox === "dme"
+//                 ? "bg-teal-500 text-white"
+//                 : "text-teal-700 hover:bg-teal-500 hover:text-white group"
+//             }`}
+//             onClick={() => handleClick("dme")}
+//           >
+//             <div className="flex flex-col gap-4 items-start text-left">
+//               <div className="flex items-center gap-3">
+//                 <FaWheelchair className="text-xl transition-colors duration-300" />
+//                 <h3 className="text-lg font-semibold m-0">
+//                   Are you a DME Provider?
+//                 </h3>
+//               </div>
+//               <p className="text-sm m-0">
+//                 Receive and manage patient referrals efficiently
+//               </p>
+//               <Link to="/" className="no-underline">
+//                 <button className="bg-teal-700 text-white font-medium py-2 px-4 rounded-md w-full">
+//                   Manage account
+//                 </button>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Homecare Business Box */}
+//           <div
+//             className={`rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm
+//             ${
+//               activeBox === "homecare"
+//                 ? "bg-teal-500 text-white"
+//                 : "text-teal-700 hover:bg-teal-500 hover:text-white group"
+//             }`}
+//             onClick={() => handleClick("homecare")}
+//           >
+//             <div className="flex flex-col gap-4 items-start text-left">
+//               <div className="flex items-center gap-3">
+//                 <FaBook className="text-xl transition-colors duration-300" />
+//                 <h3 className="text-lg font-semibold m-0">
+//                   Take Your Homecare Business Online with Us
+//                 </h3>
+//               </div>
+//               <p className="text-sm m-0">
+//                 Digitize and simplify your homecare operations with
+//                 NovaHome.Care
+//               </p>
+//               <Link to="/login" className="no-underline">
+//                 <button className="bg-teal-700 text-white font-medium py-2 px-4 rounded-md w-full">
+//                   Get started for Free
+//                 </button>
+//               </Link>
+//             </div>
+//           </div>
+
+//           {/* Seamless Medical Billing Box */}
+//           <div
+//             className={`rounded-lg p-6 shadow-lg transition-all duration-300 flex-1 max-w-sm
+//             ${
+//               activeBox === "seamless"
+//                 ? "bg-teal-500 text-white"
+//                 : "text-teal-700 hover:bg-teal-500 hover:text-white group"
+//             }`}
+//             onClick={() => handleClick("seamless")}
+//           >
+//             <div className="flex flex-col gap-4 items-start text-left">
+//               <div className="flex items-center gap-3">
+//                 <FaBook className="text-xl transition-colors duration-300" />
+//                 <h3 className="text-lg font-semibold m-0">
+//                   Seamless Medical Billing
+//                 </h3>
+//               </div>
+//               <p className="text-sm m-0">
+//                 Streamline claims, payments, and revenue cycle management with
+//                 NovaHomeCare
+//               </p>
+//               <Link to="/login" className="no-underline">
+//                 <button className="bg-teal-700 text-white  font-medium py-2 px-4 rounded-md w-full">
+//                   CTA Get Started for Free
+//                 </button>
+//               </Link>
+//             </div>
+//           </div>
+//         </div>
+
+//         {/* Conditional Rendering of Sections */}
+//         <div className="left-0 right-0 top-full mt-4">
+//           {activeBox === "jobSeeker" && <WhyChooseUsSection />}
+//           {activeBox === "caregiver" && <CareGiver />}
+//           {activeBox === "dme" && <DMEProvider />}
+//           {activeBox === "homecare" && <HomeCareBuisness />}
+//           {activeBox === "seamless" && <SeamlessMedicalBilling />}
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default JobPortalSection;
